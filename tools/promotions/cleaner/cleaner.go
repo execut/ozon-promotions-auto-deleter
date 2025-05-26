@@ -49,7 +49,11 @@ func (c *Cleaner) Run() error {
                 fmt.Printf("Product %v not founded after deactivation\n", productID)
             }
         }
+
+        fmt.Printf("Успешно удалено %v автодобавленых товаров из акции №%v\n", len(actionListResponse.Actions), action.Id)
     }
+
+    fmt.Printf("Успешно очишено %v акций\n", len(actionListResponse.Actions))
 
     return nil
 }
