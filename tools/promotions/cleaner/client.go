@@ -2,8 +2,9 @@ package cleaner
 
 import (
     "encoding/json"
-    "github.com/execut/ozon-reports-downloader/common"
     "time"
+
+    "github.com/execut/ozon-reports-downloader/common"
 )
 
 type Client struct {
@@ -34,7 +35,7 @@ func (c *Client) ActionList() (*ActionListResponse, error) {
 }
 
 func (c *Client) ActiveToAutoAddProductList(actionID string, dateToAutoAdd time.Time) (*ActiveToAutoAddProductListResponse, error) {
-    resp, err := common.DoGetRequest(struct{}{}, "https://seller.ozon.ru/api/site/seller-actions/v1/seller-actions/"+actionID+"/product/active-to-auto-add?offset=0&limit=100&dateToAutoAdd="+dateToAutoAdd.Format(time.RFC3339), c.cookie, c.companyID)
+    resp, err := common.DoGetRequest(struct{}{}, "https://seller.ozon.ru/api/site/sa-auto-add/v1/"+actionID+"/products-with-offset?offset=0&limit=100&autoAddDate="+dateToAutoAdd.Format(time.RFC3339), c.cookie, c.companyID)
     if err != nil {
         return nil, err
     }
@@ -50,10 +51,10 @@ func (c *Client) ActiveToAutoAddProductList(actionID string, dateToAutoAdd time.
 
 func (c *Client) DeactivateToAutoAdd(actionID string, dateToAutoAdd time.Time, productIDList []string) (*DeactivateToAutoAddResponse, error) {
     request := DeactivateToAutoAddRequest{
-        ProductIds:    productIDList,
-        DateToAutoAdd: dateToAutoAdd,
+        ProductIds:  productIDList,
+        AutoAddDate: dateToAutoAdd,
     }
-    resp, err := common.DoRequest(request, "https://seller.ozon.ru/api/site/seller-actions/v1/seller-actions/"+actionID+"/product/deactivate-to-auto-add", c.cookie, c.companyID)
+    resp, err := common.DoRequest(request, "https://seller.ozon.ru/api/site/sa-auto-add/v1/"+actionID+"/delete-products", c.cookie, c.companyID)
     if err != nil {
         return nil, err
     }

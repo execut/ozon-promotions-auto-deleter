@@ -102,24 +102,27 @@ type ActionListResponse struct {
 type ActiveToAutoAddProductListResponse struct {
     Products []struct {
         Id                        string   `json:"id"`
-        Price                     int      `json:"price"`
-        BasePrice                 int      `json:"basePrice"`
-        Name                      string   `json:"name"`
-        OfferID                   string   `json:"offerID"`
-        ItemType                  string   `json:"itemType"`
-        OzonStock                 string   `json:"ozonStock,omitempty"`
-        SellerStock               string   `json:"sellerStock"`
+        OfferId                   string   `json:"offerId"`
         Skus                      []string `json:"skus"`
+        OzonSku                   string   `json:"ozonSku"`
+        Name                      string   `json:"name"`
+        ItemType                  string   `json:"itemType"`
+        DescriptionCategoryId     string   `json:"descriptionCategoryId"`
+        Price                     int      `json:"price"`
+        ActionPrice               int      `json:"actionPrice"`
+        BasePrice                 int      `json:"basePrice"`
         MaxDiscountPrice          int      `json:"maxDiscountPrice"`
         MinSellerPrice            int      `json:"minSellerPrice"`
-        Thumbnail                 string   `json:"thumbnail"`
-        TotalStock                string   `json:"totalStock"`
-        Currency                  string   `json:"currency"`
-        OzonSku                   string   `json:"ozonSku"`
-        DescriptionCategoryId     string   `json:"descriptionCategoryId"`
-        ActionPriceToAutoAdd      int      `json:"actionPriceToAutoAdd"`
         MarketplaceSellerPrice    int      `json:"marketplaceSellerPrice"`
-        AllowStockEdit            bool     `json:"allowStockEdit"`
+        ActionPriceToAutoAdd      int      `json:"actionPriceToAutoAdd"`
+        OzonStock                 string   `json:"ozonStock"`
+        SellerStock               string   `json:"sellerStock"`
+        TotalStock                string   `json:"totalStock"`
+        MinActionQuantity         string   `json:"minActionQuantity"`
+        Quantity                  string   `json:"quantity"`
+        QuantityToAutoAdd         string   `json:"quantityToAutoAdd"`
+        Currency                  string   `json:"currency"`
+        Thumbnail                 string   `json:"thumbnail"`
         PriceReferenceForBoosting struct {
             BoostingX2Price  int `json:"boostingX2Price"`
             BoostingX3Price  int `json:"boostingX3Price"`
@@ -127,8 +130,11 @@ type ActiveToAutoAddProductListResponse struct {
             MaxBoostingPrice int `json:"maxBoostingPrice"`
         } `json:"priceReferenceForBoosting"`
         BoostingInSearch struct {
+            BoostingPercent    int    `json:"boostingPercent"`
+            MaxBoostingPercent int    `json:"maxBoostingPercent"`
+            BoostingScaleColor string `json:"boostingScaleColor"`
         } `json:"boostingInSearch"`
-        ActionPrice int `json:"actionPrice,omitempty"`
+        IsManuallyAdded bool `json:"isManuallyAdded"`
     } `json:"products"`
     Total string `json:"total"`
 }

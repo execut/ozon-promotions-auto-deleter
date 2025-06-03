@@ -27,12 +27,13 @@ func (c *Cleaner) Run() error {
             fmt.Printf("Date to next is empty for action %v\n", action.Id)
             continue
         }
+
         productListResponse, err := c.client.ActiveToAutoAddProductList(action.Id, *action.DateToNextAutoAdd)
         if err != nil {
             return err
         }
 
-        var productIDList []string
+        productIDList := make([]string, 0, len(productListResponse.Products))
         productIDMap := make(map[string]struct{}, len(productListResponse.Products))
         for _, product := range productListResponse.Products {
             productIDList = append(productIDList, product.Id)
@@ -50,7 +51,7 @@ func (c *Cleaner) Run() error {
             }
         }
 
-        fmt.Printf("Успешно удалено %v автодобавленых товаров из акции №%v\n", len(actionListResponse.Actions), action.Id)
+        fmt.Printf("Успешно удалено %v автодобавленых товаров из акции №%v\n", len(productIDList), action.Id)
     }
 
     fmt.Printf("Успешно очишено %v акций\n", len(actionListResponse.Actions))
