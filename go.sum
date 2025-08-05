@@ -1,13 +1,5 @@
-github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
-github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/diphantxm/ozon-api-client v1.18.0 h1:35sk+w37lRh05yNNFd3c3h6UxA0rAvMSui3wrmVrUJM=
-github.com/diphantxm/ozon-api-client v1.18.0/go.mod h1:z1zSR4EuqhX2506M1XJSZWxisFajrqlrr9/U40EZyjQ=
-github.com/execut/ozon-reports-downloader v0.0.0-20250526121113-efe82d9f75b8 h1:r9cLlIlK2qAVsV5tiZM61ZKqNqcuZHQIezJe6PIO46s=
-github.com/execut/ozon-reports-downloader v0.0.0-20250526121113-efe82d9f75b8/go.mod h1:KQmmp4GbK7umlalM5e8X0k2hl/to/YGxJPzVHJ73TKQ=
-github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
-github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
-github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=
-github.com/stretchr/testify v1.8.4/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXlSw2iwfAo=
+github.com/execut/ozon-reports-downloader v0.0.0-20250706124323-0768aaf33a8a h1:G4WSnPpJxLrUBvytVrkMO11KHZQRIXIoEWJIUn5ON7Q=
+github.com/execut/ozon-reports-downloader v0.0.0-20250706124323-0768aaf33a8a/go.mod h1:KQmmp4GbK7umlalM5e8X0k2hl/to/YGxJPzVHJ73TKQ=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
